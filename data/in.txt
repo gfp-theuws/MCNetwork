@@ -1,45 +1,45 @@
 #simulation parameters
-gate XOR 
-threads 4 
+gate XOR
+threads 4
 finiteElementsResolution 1e5 #(min 1e5)
 equilSteps 1e3 #equilibration steps (should be around 1e4)
 calcCurrentSteps 1e4  #steps to run KMC simulation
-storingMode 0 # if 1: store states (rates + ocupation) until memoryLimit is reached. might increase performance in the case of limit number of states occuring 
+storingMode 0 # if 1: store states (rates + ocupation) until memoryLimit is reached. might increase performance in the case of limit number of states occuring
 memoryLimit 800 #in MB (should be around 100mb under real limit), real memory consumption is memoryLimit*threads
 
 #physical parameters
 T 77 #temperature
-acceptorNumber 200 
+acceptorNumber 200
 donorNumber 3
-eps 10 #relative permitivity (scales coulomb interaction) eps=4.5 --> I0= 15meV 
-a 20 #nm #localization length
+eps 10 #relative permitivity (scales coulomb interaction) eps=4.5 --> I0= 15meV
+a 5 #nm #localization length
 minDist 0 #nm #minimal distance between acceptors (normally not used)
-electrodeWidth 60 #nm #used for boundary condition in laplace equation
+electrodeWidth 30 #nm #used for boundary condition in laplace equation
 
 randomEnergyStdDev 0.1 # Energy disorder in eV
 
 #cuts
-minHoppingDist 3  #nm #cut on minimal distance for hop
-maxHoppingDist 60 #nm #cut on maximal distance for hop
-maxInteractionDist 500 #nm #cut coulomb interaction range (not used)
+minHoppingDist 2  #nm #cut on minimal distance for hop
+maxHoppingDist 30 #nm #cut on maximal distance for hop
+maxInteractionDist 250 #nm #cut coulomb interaction range (not used)
 
 #geometry parameters
 geometry circle #rect/circle. if rect -> lenX, lenY must be defined ; if circle -> radius must be defined
-lenX 300 #nm
-lenY 300 #nm
-radius 150 #nm
+lenX 150 #nm
+lenY 150 #nm
+radius 75 #nm
 
 
-#electrode positions 
+#electrode positions
 ### rect: ####
-#positions given in fractions of lens  
+#positions given in fractions of lens
 #edges:
 # 0 --> x=0
 # 1 --> x=len
 # 2 --> y=0
 # 3 --> y=width
 
-#        pos edge voltage 
+#        pos edge voltage
 #electrode 0.25 0 0
 #electrode 0.75 0 0
 #electrode 0.25 1 0
@@ -50,9 +50,9 @@ radius 150 #nm
 #electrode 0.75 3 -0.181519
 
 ### circle: ####
-#positions given in degrees 
+#positions given in degrees
 
-#       pos voltage 
+#       pos voltage
 electrode 0 0.6
 electrode 45 0
 electrode 90 0
@@ -66,7 +66,7 @@ electrode 315 1
 
 inputElectrode 3 #index of input electrode 1
 inputElectrode 5 #index of input electrode 2
-outputElectrode 0 #index of output electrode 
+outputElectrode 0 #index of output electrode
 
 #isolateElectrode 3 #denies any hopps to electrode 3. laplace eq is still affected
 #isolateElectrode 1
@@ -78,7 +78,7 @@ controlVoltageMax 1 #possible interval for control voltages
 voltageScanMin 0    #min search voltage
 voltageScanMax 0.5  #max search voltage
 voltageScanPoints 2 # number of points to search on. range between "voltageScanMin" and "voltageScanMax" is split in "voltageScanPoints" number of points.  #0V and 0.5V should be hit exactly
-seperationVoltage 0.25 # "voltage < seperationVoltage" -> false. "voltage > seperationVoltage" -> true. 
+seperationVoltage 0.25 # "voltage < seperationVoltage" -> false. "voltage > seperationVoltage" -> true.
 
 
 #optimization parameters
@@ -108,4 +108,3 @@ gradDeltaV 0.02
 k 1.380649e-23 #boltzmann
 e 1.60217662e-19 #elementary charge
 eps0 8.854187817620389e-12
-

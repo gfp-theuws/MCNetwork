@@ -9,12 +9,12 @@ memoryLimit 800 #in MB (should be around 100mb under real limit), real memory co
 
 #physical parameters
 T 77 #temperature
-acceptorNumber 200
-donorNumber 3
+acceptorNumber 50
+donorNumber 1
 eps 10 #relative permitivity (scales coulomb interaction) eps=4.5 --> I0= 15meV
 a 5 #nm #localization length
 minDist 0 #nm #minimal distance between acceptors (normally not used)
-electrodeWidth 30 #nm #used for boundary condition in laplace equation
+electrodeWidth 15 #nm #used for boundary condition in laplace equation
 
 randomEnergyStdDev 0.1 # Energy disorder in eV
 
@@ -27,7 +27,7 @@ maxInteractionDist 250 #nm #cut coulomb interaction range (not used)
 geometry circle #rect/circle. if rect -> lenX, lenY must be defined ; if circle -> radius must be defined
 lenX 150 #nm
 lenY 150 #nm
-radius 75 #nm
+radius 37.5 #nm
 
 
 #electrode positions
